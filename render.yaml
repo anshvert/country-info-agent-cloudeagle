@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: country-info-agent
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: chainlit run app.py --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
